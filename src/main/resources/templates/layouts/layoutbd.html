@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+	<!-- Basic Page Needs -->
+	<meta charset="utf-8">
+	<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<title th:text="${title}"></title>
+	<meta name="author" content="albert">
+ 	<meta name="keywords" th:content="${viewKeywords}"  >
+  	<meta name="description" th:content="${viewDescription}" >
+	
+  	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+	<!-- config fragment 사용 -->
+    <th:block th:replace="fragments/config :: configFragment" ></th:block>
+
+</head>
+<body>
+
+	<!-- header fragment 사용 -->
+	<div class="page">
+
+     	<th:block th:replace="fragments/hd :: headerFragment"></th:block>
+
+     	<th:block th:replace="fragments/navigation :: navFragment"></th:block>
+
+       	<div class="band chief">
+	
+			<div class="container">
+
+       			<p style="margin:0px;padding:0px;width:100%;height:10px;overflow:hidden"></p>
+				<form th:action="@{'/board/list/0'}" role="form" method="get" th:object="${items}">
+		        <!-- 현재 layout을 사용하는 content -->
+		        <th:block layout:fragment="content"></th:block>
+
+		        <th:block th:replace="fragments/aside :: asideFragment"> </th:block>
+				</form>
+		        
+	        </div><!--end container-->
+			
+		</div><!--end band-->	
+		
+	    <th:block th:replace="fragments/ft :: footerFragment"> </th:block>
+	    
+	    <div class="band bottom">	
+	
+			<footer class="container">		
+				<div style="width:100%;text-align:center">
+					<p>Copyright © 2014 visionboy.me All Right Reserved.</p>		
+				</div><!--end eight-->
+		
+			</footer><!-- container -->
+		
+		</div><!--end band--
+		
+	</div>
+
+
+	<!-- JS ================================================== -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="/js/tabs.js"></script>
+	<script>
+	var geturl = document.referrer;
+// 	$.post("ajax_pro.php", {
+// 		geturl: geturl,
+// 		rfs:"<{$rfs}>",
+// 		tp: "poll"
+// 	}, function (dt) {
+// 	//	alert(dt);
+// 	});
+	</script>
+	<!--plugins-->
+	<script src="/js/jquery.tweet.js"></script>	
+
+	<!--instantiate js plugins-->
+	<script src="/js/whatever.js"></script>
+  	<script src="/js/comm.js"></script>
+    </body>
+
+</html>

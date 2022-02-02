@@ -1,0 +1,75 @@
+@charset "utf-8"; 
+
+@import url('common.css');
+
+.bbstit{margin:0px;padding:10px 5px;width:740px;background:#f5f5f5;border-top:2px solid #ccc}
+
+/* list */
+.bbslist{border-top:2px solid #ccc;border-bottom:2px solid #ccc}
+.bbslist th{padding:10px 0px;background:#f5f5f5;border-bottom:1px solid #ccc}
+.bbslist th span{display:block;border-right:1px solid #666}
+.bbslist th.last span{border-right:none}
+.bbslist td{padding:10px 5px;border-bottom:1px solid #ccc}
+
+.faqlist{margin:0px;padding:0px;width:100%;border-top:2px solid #ccc;border-bottom:2px solid #ccc}
+.faqlist dl{width:100%}
+.faqlist dt{padding:0px;width:100%;line-height:150%;background:#f5f5f5;font-weight:bold;text-align:left;border-bottom:1px solid #ccc}
+.faqlist dt a{display:block;padding:10px}
+.faqlist dd{padding:10px 28px;line-height:150%;text-align:left;border-bottom:1px solid #ccc}
+
+/* search */
+.bbssearch{margin:5px 0px;text-align:center}
+
+/* view */
+.bbsview{border-bottom:2px solid #ccc}
+.bbsview tr.first th{line-height:150%;background:#f5f5f5;text-align:left;font-weight:bold;border-top:1px solid #ccc}
+.bbsview tr.first td{border-top:1px solid #ccc}
+.bbsview tr.last th{background:none}
+.bbsview th{padding:8px;font-weight:normal;border-bottom:1px solid #ccc}
+.bbsview td{padding:8px;text-align:left;border-bottom:1px solid #ccc}
+.bbsview tr.subject td{padding:15px 8px;line-height:150%}
+
+.bbsview1{border-bottom:2px solid #ccc}
+.bbsview1 tr.first th,.bbsview1 tr.first td{border-top:1px solid #ccc}
+.bbsview1 tr.last th{background:none}
+.bbsview1 th{padding:8px;font-weight:normal;border-bottom:1px solid #ccc}
+.bbsview1 td{padding:8px;text-align:left;border-bottom:1px solid #ccc}
+.bbsview1 tr.subject td{padding:15px 8px;line-height:150%}
+
+/* write */
+.bbswrite{border-bottom:2px solid #ccc}
+.bbswrite tr.first th,.bbswrite tr.first td{border-top:1px solid #ccc}
+.bbswrite th{padding:8px;background:#f5f5f5;border-bottom:1px solid #ccc}
+.bbswrite td{padding:8px;text-align:left;border-bottom:1px solid #ccc}
+.bbswrite tr.subject td{padding:8px 0px}
+
+.qnawrite{margin:0px;border-top:2px solid #ccc;border-bottom:2px solid #ccc}
+.qnawrite dt{padding:10px;line-height:150%;background:#f5f5f5;font-weight:bold;text-align:left;border-bottom:1px solid #ccc}
+.qnawrite dd{padding:10px 0px;border-bottom:1px solid #ccc}
+
+.faqwrite{margin:0px;padding:0px;width:100%;border-top:2px solid #ccc;border-bottom:2px solid #ccc}
+.faqwrite dl{}
+.faqwrite dl dt{padding:10px;background:#f5f5f5;font-weight:bold;text-align:left;border-bottom:1px solid #ccc}
+.faqwrite dl dd{padding:10px;text-align:left;border-bottom:1px solid #ccc}
+
+/* application */
+.bbsapp{border-top:2px solid #ccc;border-bottom:2px solid #ccc}
+.bbsapp th.thtit{background:#f5f5f5;font-weight:bold;border-right:1px solid #ccc}
+.bbsapp th.thtit1{border-right:1px solid #ccc}
+.bbsapp th{padding:5px;line-height:150%;font-weight:normal;border-bottom:1px solid #ccc}
+.bbsapp td{padding:10px;text-align:left;line-height:150%;border-bottom:1px solid #ccc}
+.bbsapp td p{margin:2px 0px}
+
+/* password */
+.pwdlayer{position:fixed; _position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:10000}
+.pwdbg{position:absolute;left:0px;top:0px;width:100%;height:100%;background:#000;opacity:.10;filter:alpha(opacity=50)}
+
+#pwdgroup{position:absolute;left:50%;top:50%;margin:-85px 0px 0px -175px;width:350px;height:170px;background:#fff;border:1px solid #ccc}
+#pwdgroup dl{margin:12px auto;width:320px;text-align:center}
+#pwdgroup dl dt{margin:0px;font-weight:bold;text-align:left}
+#pwdgroup dl dd.pwdinp{margin:10px 0px;padding:30px 0px;width:100%;border-top:2px solid #4f83af;border-bottom:2px solid #4f83af}
+#pwdgroup dl dd.pwbtn{width:100%}
+
+*html .pwdlayer{position:fixed;left:0px;top:0px;width:100%;height:100%;z-index:10000}
+*html .pwdbg{display:none}
+*html #pwdgroup{position:absolute;left:50%;top:50%;margin:-85px 0px 0px -250px;width:350px;height:170px;background:#fff;border:1px solid #ccc}

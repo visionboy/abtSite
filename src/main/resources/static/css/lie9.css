@@ -1,0 +1,11 @@
+.container .four.columns {width:98% !important}
+div.flickr img {
+	float: left;
+	width:97px;
+	height:97px;
+	max-width: 46%;
+	margin: 2%;
+	padding: 6px;
+	border: 1px solid #ededed;
+	background: #fff;
+}

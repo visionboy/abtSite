@@ -1,0 +1,86 @@
+<html lagn="ko" 
+      xmlns:th="http://www.thymeleaf.org">
+
+		<aside th:fragment="asideFragment" class="six columns">
+						
+			<div class="sub subscribe clearfix">
+						
+				<header>
+				
+					<h4>Day visitors [<strong style="color:#FF8201" th:text="${totalCount}"></strong>]</h4>
+				
+				</header>
+							
+				<input type = "hidden" name="tableId" id="tableId" th:value="${tableId}">
+				<input type="search" name="searchInp" id="searchInp" placeholder="eg: Cheese" th:value="${searchInp}">
+				<button type="submit">Search</button>
+
+			</div><!--end sub subscribe-->	
+
+			<div class="sub categories clearfix">
+			
+				<header>
+				
+					<h4>Categories</h4>
+				
+				</header>
+				
+				<div class="three columns alpha">
+				
+					<ul class="categories">
+						<li><a href="/board/list/0/?tableId=bd1">java <span th:text="${bd1}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd23">git <span th:text="${bd23}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd2">asp <span th:text="${bd2}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd5">javascript <span th:text="${bd5}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd14">android <span th:text="${bd14}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd19">phonegap <span th:text="${bd19}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd6">oracle <span th:text="${bd6}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd25">spark/hadoop <span th:text="${bd25}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd8">mysql <span th:text="${bd8}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd16">unix <span th:text="${bd16}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd">study <span th:text="${bd}"></span></a></li>
+					</ul><!--end cats-->
+				
+				</div><!--end alpha-->
+				
+				<div class="three columns omega">
+				
+					<ul class="categories">
+						<li><a href="/board/list/0/?tableId=bd4">.net <span th:text="${bd4}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd24">배포/개발환경 <span th:text="${bd24}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd3">php <span th:text="${bd3}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd9">css style <span th:text="${bd9}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd15">ios <span th:text="${bd15}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd7">mssql <span th:text="${bd7}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd18">template <span th:text="${bd18}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd11">linux  <span th:text="${bd11}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd17">windows <span th:text="${bd17}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd10">other <span th:text="${bd10}"></span></a></li>
+						<li><a href="/board/list/0/?tableId=bd13">reference <span th:text="${bd13}"></span></a></li>
+					</ul><!--end cats-->
+				
+				</div><!--end omega-->
+													
+			</div><!--end sub cats-->	
+						
+						
+			<div class="sub video">
+			
+				<header>
+				
+					<h4>My QRcode</h4>
+				
+				</header>
+				
+				<figure>
+					<div class="embed" style="text-align:center">
+					<!--<iframe src="http://player.vimeo.com/video/22679618" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>	-->				
+					<a href="http://m.site.naver.com/03xiT"><img src="/images/banners/bigqr.jpg" alt="http://m.site.naver.com/03xiT"></a>
+					</div><!--end embed-->
+				</figure>
+																		
+			</div><!--end sub video-->				
+					
+		</aside><!--end six-->
+
+</html>

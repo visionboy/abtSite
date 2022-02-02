@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <!--configFragment 선언-->
+    <th:block th:fragment="configFragment">
+
+        <!-- CSS -->
+		<link rel="stylesheet" href="/css/base.css">
+		<link rel="stylesheet" th:href="@{/css/skeleton.css}">
+		<link rel="stylesheet" th:href="@{/css/ly.css}">
+	
+		<!--[if lt IE 9]>
+			<script th:src="@{/js/html5.js}"></script>
+		<![endif]-->
+	
+		<!-- Favicons -->
+		<link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+		<link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}">
+		<link rel="apple-touch-icon" sizes="72x72" th:href="@{/images/apple-touch-icon-72x72.png}">
+		<link rel="apple-touch-icon" sizes="114x114" th:href="@{/images/apple-touch-icon-114x114.png}">
+
+        
+        <!-- Content Page의 CSS fragment 삽입 -->
+        <th:block layout:fragment="css"></th:block>
+
+        <!-- Content Page의 script fragment 삽입 -->
+        <th:block layout:fragment="script"></th:block>
+        
+    </th:block>
+</html>

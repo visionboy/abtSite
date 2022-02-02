@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layoutbd}"
+>
+
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<script th:inline="javascript">
+
+        $(document).ready(function(){
+            $("#searchBtn").on("click",function(e) {
+                e.preventDefault();
+                page(0);
+            });
+        });
+
+        function page(page,shapcheck){
+        	var checkGo = (shapcheck===undefined || !shapcheck);
+            var searchInp = $("#searchInp").val();
+            var tableId = $("#tableId").val();
+
+			if (checkGo) {
+				location.href="/board/list/" + page + "?tableId=" + tableId + "&searchInp=" + searchInp;
+			}
+        }
+
+    </script>
+</th:block>
+
+
+
+    <div layout:fragment="content" class="ten columns">
+					
+		<article>
+
+			<div class="cttbox" th:each="item: ${items.content}">
+								
+				<h2 style="word-break:break-all"><a th:href="'/board/'+${item.no}" th:text="${item.subject}"></a></h2>
+				
+				<p class="meta">Posted by <span>Albert</span> <span class="time" th:text="${item.pubDate}"></span> </p>
+				
+				<p style="word-break:break-all"><a href="/board/'+${item.no}" th:text="${item.content}"></a></p>
+									
+			</div><!--seven-->	
+			
+			<hr />	
+						
+		</article><!--blog post-->
+				
+						
+		<nav class="pagination" th:if="${not #lists.isEmpty(items.content)}">
+		
+			<!--(1)-->
+  			<ul class="pagination"
+    			th:with="start=${T(Math).floor(items.number/10) * 10 + 1},
+              		last=${start + 9 < items.totalPages ? start + 9 : items.totalPages}">
+            
+            <!--(2)-->
+			    <li>
+			      <a th:onclick="'javascript:page(0)'"  aria-label="First">
+			        <span aria-hidden="true"> << </span>
+			      </a>
+			    </li>
+			    
+			<!--(3)-->
+			    <li th:class="${items.first} ? 'disabled'">
+			      <a th:onclick="'javascript:page(' + ${items.number - 1} + ','+${items.first}+')'"  aria-label="Previous">
+			        <span aria-hidden="true">&lt;</span>
+			      </a>
+			    </li>
+			    
+			<!--(4)-->
+			  	<li th:each="page: ${#numbers.sequence(start, last)}" >
+			    	<a th:text="${page}" th:class="${page == items.number + 1} ? 'selected'" th:onclick="'javascript:page(' + ${page - 1} + ')'">&nbsp;</a>
+			  	</li>
+			  	
+			<!--(5)-->
+			    <li >
+			      <a th:onclick="'javascript:page(' + ${items.number + 1} + ','+${items.last}+' )'" aria-label="Next">
+			        <span aria-hidden="true">&gt;</span>
+			      </a>
+			    </li>
+			    
+			<!--(6)-->
+			    <li>
+			      <a th:onclick="'javascript:page(' + ${items.totalPages-1} + ')'" aria-label="Last">
+			        <span aria-hidden="true">>></span>
+			      </a>
+			    </li>
+			  </ul>
+		
+		</nav><!--end pagination-->												
+
+	</div><!--end ten-->	
+	
+	<span th:text="${list.number}">	</span>
+		
+</html> 

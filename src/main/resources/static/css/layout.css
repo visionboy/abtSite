@@ -1,0 +1,60 @@
+@charset "utf-8"; 
+
+@import url('common.css');
+@import url('content.css');
+@import url('board.css');
+
+/* layout */
+#wrap{margin:0px auto;width:1000px;text-align:left}
+#header{position:relative;width:100%;height:155px;background:url(../images/common/bg/bg_s_visual.png) no-repeat right top;z-index:10}
+#container{position:relative;margin:17px 0px 34px 0px;width:1000px;overflow:hidden}
+#sidebar{display:inline;width:200px;float:left;z-index:1000}
+#content{display:inline;position:relative;padding-top:30px;width:750px;float:right;background:url(../images/common/bg/bg_top.gif) no-repeat left top}
+#section{padding-bottom:30px;width:750px;background:url(../images/common/bg/bg_foot.gif) no-repeat left bottom}
+#article{padding:0px 35px;width:680px;background:url(../images/common/bg/bgline_mid.gif) repeat-y left top;z-index:1000}
+#footer{clear:both;width:100%;height:100px;background:#f8f8f8}
+
+/* header */
+h1{position:absolute;left:10px;top:18px;margin:0px;padding:0px;width:108px;height:78px;z-index:9999}
+h1 a{display:block;width:100%;height:100%;z-index:1000}
+
+#gnb{position:absolute;right:0px;bottom:0px;width:750px;height:68px;z-index:9999}
+#gNavi{position:relative;width:100%;height:68px;z-index:9999}
+#gNavi{width:100%}
+#gNavi li{height:68px;float:left}
+#gNavi li a{display:block;height:68px;float:left;z-index:9999}
+#gNavi li img{vertical-align:top}
+
+/* navigation_depth1 */
+.gm01{width:149px}
+.gm02{width:151px}
+.gm03{width:150px}
+.gm04{width:147px}
+.gm05{width:153px}
+
+/* sidebar */
+#sidebar h2{margin-bottom:5px;font-size:16px;text-align:center}
+#sidebar ul{}
+#sidebar ul li{border-bottom:1px solid #ccc}
+#sidebar ul li a{display:block;padding:0px 10px;width:180px;line-height:20px}
+#sidebar ul li a:hover{}
+
+/* content */
+#location{position:absolute;right:35px;top:40px;width:500px;text-align:right}
+#location span{padding-left:14px;background:url(../images/common/ico/ico_home.gif) no-repeat left 50%}
+
+#content h2{margin-bottom:25px;padding-bottom:12px;background:url(../images/common/bg/bgline_t_dashed.gif) repeat-x left bottom;width:100%;font-size:16px}
+
+/* footer login box */
+#lgiwrap{position:absolute;left:50%;top:50%;margin:-200px 0px 0px -250px;width:500px;height:242px;background:#fff;text-align:left;border:2px solid #145a49}
+#lgiwrap h1{margin-top:10px;margin-left:20px;width:248px;height:78px}
+#lgicontent{position:relative;margin:0px auto;width:422px;height:135px;background:url(../images/common/bg/bg_login.gif) no-repeat left top}
+#lgiwrap ol{margin:20px auto 20px;width:422px}
+#lgiwrap ol li{line-height:150%}
+#lgiwrap ul{position:absolute;left:50px;top:35px;margin:0px auto;width:256px}
+#lgiwrap ul li{height:34px}
+#lgiwrap ul li:after{content:"";display:block;clear:both}
+#lgiwrap ul li label{display:block;width:60px;height:30px;line-height:30px;float:left;font-size:14px;font-weight:bold;letter-spacing:-1px;color:#145a49}
+#lgiwrap ul li span{display:block;width:190px;height:30px;float:right}
+#lgiwrap ul li input{width:180px;height:30px;line-height:30px;font-size:15px;border:1px solid #145a49}
+#lgiwrap p{position:absolute;right:20px;top:45px;width:80px;height:46px}

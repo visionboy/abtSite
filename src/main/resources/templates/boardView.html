@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layoutbd}">
+
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<script th:inline="javascript">
+
+    </script>
+</th:block>
+
+
+
+    <div layout:fragment="content" class="ten columns">
+
+		<article>
+
+			<div class="cttbox" style="overflow:hidden">
+
+				<h2 class="vsubject" th:text="${item.subject}" ></h2>
+
+				<p class="meta">Posted by <span>Albert</span> <span class="time" th:text="${item.pubDate}"></span> </p>
+
+				<img src="/images/common/ico/ico_file.gif" alt="file" th:if="${item.imgname!='emp'}" >
+				<a th:href="'/fdw?fname='+${item.imgname}+'&fname2='+${item.imgname2}" th:if="${item.imgname!='emp'}" th:text="${item.imgname}"></a>
+
+				<div style="font-size:12px;line-height:16px" th:utext="${item.content}">
+					<br><br>
+				</div>
+
+			</div><!--seven-->
+
+			<hr />
+
+			<p style="height:30px;line-height:30px;text-align:center"><a href="/board/list/" class="buttons orange" style="color:#fff;text-decoration:none">LIST</a></p>
+			<p class="clear" style="height:20px"></p>
+		</article><!--blog post-->
+
+	</div><!--end ten-->	
+
+		
+</html> 

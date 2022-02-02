@@ -1,0 +1,62 @@
+@charset "utf-8"; 
+
+/* common */
+*{margin:0px;padding:0px}
+body{margin:0px;padding:0px;font-size:12px;font-family:Dotum,Verdana;text-align:center;color:#666}
+h1,h2,h3,h4,h5,h6{margin:0px;padding:0px;font-style:normal;font-size:12px}
+a:link,a:visited,a:hover,a:active,a:focus{color:#666}
+a:link,a:visited{text-decoration:none}
+a:hover,a:active,a:focus{color:#666;text-decoration:none}
+img{margin:0px;padding:0px;border:0px;vertical-align:middle}
+label,input,select,button{margin:0px;padding:0px;vertical-align:middle}
+input{font-size:12px}
+button{cursor:pointer}
+ul,li,ol,dl,dt,dd,p,table,th,td,form,fieldset{margin:0px;padding:0px}
+ul,ol{list-style:none}
+table{margin:0px;padding:0px;width:100%;border-spacing:0;border-collapse:collapse;font-size:12px;text-align:left;border:none}
+table th,table td{margin:0px;padding:0px;text-align:center;border:none}
+address,em{font-style:normal}
+
+hr{position:absolute;top:0px;left:0px;width:0px;height:0px;overflow:hidden;visibility:hidden;font-size:0px;line-height:0px}
+fieldset{margin:0;padding:0;border:0}
+legend,caption{position:absolute;top:0px;left:0px;width:0px;height:0px;overflow:hidden;visibility:hidden;font-size:0px;line-height:0px}
+.hidden{position:absolute;width:0px;height:0px;visibility:hidden;overflow:hidden;line-height:0px}
+
+/* text정렬 */
+.text_l{text-align:left!important}
+.text_c{text-align:center!important}
+.text_r{text-align:right!important}
+
+/* float정렬 */
+.float_l{float:left!important}
+.float_r{float:right!important}
+/* float해제 */
+.clear{clear:both!important}
+
+/* button */
+.bbsbtn{padding:10px 0px}
+
+/* search */
+.bbssearch{margin:10px 0px}
+
+/* paging */
+.paging{margin:20px 0px 10px 0px;text-align:center}
+.paging a{margin:0 2px}
+.paging a:hover{text-decoration:underline}
+.paging strong{margin:0 2px;color:#f00}
+
+/* input */
+.inp{height:20px;line-height:20px;border:1px solid #ccc}
+
+/* textarea */
+textarea{border:1px solid #ccc}
+
+pre{white-space:pre;overflow:auto;font-size:12px;font-family:Dotum,Verdana;color:#5f615a;text-align:left;word-spacing:-1px;line-height:150%}
+pre {
+white-space: pre-wrap; /* css3 */
+white-space: -moz-pre-wrap; /* mozilla */
+white-space: -pre-wrap; /* opera4~6 */
+white-space: -o-pre-wrap; /* opera7 */
+word-wrap: break-word; /* IE */
+} 
+

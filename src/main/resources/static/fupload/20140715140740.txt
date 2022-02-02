@@ -1,0 +1,98 @@
+insert 
+========================================================================
+ALTER procedure [dbo].[insert_banner]
+	@page_url	nvarchar(500),
+	@url		nvarchar(500),
+	@alt		nvarchar(500),
+	@gourl		nvarchar(500),
+	@target		varchar(20),
+	@width		int,
+	@height		int,
+	@sdate		varchar(14),
+	@edate		varchar(14)
+as
+begin
+	set nocount on
+
+	set @sdate=left(@sdate+'00000000000000',14)
+	set @edate=left(@edate+'00000000000000',14)
+
+	insert into banner (page_url,url,alt,gourl,target,width,height,sdate,edate)
+	values (@page_url,@url,@alt,@gourl,@target,@width,@height,@sdate,@edate)
+end
+
+======================================================================= 
+
+select 
+
+=======================================================================
+ALTER PROCEDURE [dbo].[select_event]
+@idx int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	select a.idx, a.info_items_idx, a.title, a.contents, a.regdate, a.period_start, a.period_end, a.photo_idx, a.advertiser, a.registrant_event, a.registrant_phone, a.registrant_email, a.contact_name, a.contact_phone, a.contact_email, a.website, a.eventrecv, a.del ,b.[path] ,c.title as items_title, a.Talk, a.Survey, a.Sample_url  from
+	(select * from info_table where info_items_idx = @idx)a
+	left join 
+	(select * from photo) b
+	on a.photo_idx = b.idx
+	left join
+	(select * from info_items where idx = @idx)c
+	on a.info_items_idx = c.idx	
+	  
+END
+=========================================================================
+
+update 
+
+========================================================================
+ALTER procedure [dbo].[update_posts]
+	@board			varchar(50),
+	@subject		varchar(500),
+	@text			text,
+
+	@id				varchar(50),
+
+	@photo			varchar(500),
+	@thumb			varchar(500),
+
+	@imagewarning	char(1),
+	
+	@idx int
+as
+begin
+	update posts set 
+		board_id=@board,
+		subject=@subject,
+		text=@text,	
+		imagewarning=@imagewarning
+	where idx =@idx and author_id=@id
+	
+
+	if @photo<>'' and @thumb<>''
+	begin
+		declare @posts_idx int
+		set @posts_idx=@@IDENTITY
+
+		update photo set path=@photo where outer_idx = @idx and photo_kind='D';
+
+		update photo set path=@thumb where outer_idx = @idx and photo_kind='S'
+		
+	end
+end
+
+========================================================================
+
+
+delete 
+=======================================================================
+ALTER procedure [dbo].[delete_faq]
+	@idx		int
+as
+begin
+	set nocount on
+
+	delete faq
+	where idx=@idx
+end
